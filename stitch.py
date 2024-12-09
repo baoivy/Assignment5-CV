@@ -1,5 +1,4 @@
 from panaroma import image_stitch
-import imutils
 import cv2
 
 filename = ['image/image1.jpg', 'image/image2.jpg', 'image/image3.jpg']
@@ -11,7 +10,7 @@ for i in range(len(filename)):
 
 # We need to modify the images width and height to keep our aspect ratio same across images
 for i in range(len(filename)):
-    images[i] = imutils.resize(images[i], width=400, height=400)
+    images[i] = cv2.resize(images[i], (400, 400))
 
 if no_of_images == 2:
     result = image_stitch([images[0], images[1]])
